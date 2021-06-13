@@ -51,8 +51,4 @@ services:
             
 networks:
   LEMP:        
-    external:
-    
-
-
-
+    external: true
