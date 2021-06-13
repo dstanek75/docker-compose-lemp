@@ -2,6 +2,7 @@ version: '3.9'
 
 networks:
     LEMP:
+        external: true
 
 services:
     nginx:
@@ -49,6 +50,3 @@ services:
         networks:
             - LEMP
             
-networks:
-  LEMP:        
-    external: true
