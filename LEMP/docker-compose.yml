@@ -1,8 +1,4 @@
-version: '3.9'
-
-#networks:
-#    LEMP:
-#        external: true
+version: "3.3"
 
 services:
     nginx:
@@ -14,8 +10,8 @@ services:
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - php
-#        networks:
-#            - LEMP
+        networks:
+            - LEMP
 
     mariaDB:
         image: mariadb:latest        
@@ -27,8 +23,8 @@ services:
             - nginx
         environment:
             - MYSQL_ROOT_PASSWORD=654321          
-#        networks:
-#            - LEMP    
+        networks:
+            - LEMP    
 
     php:
         image: php:7-fpm-alpine       
@@ -36,8 +32,8 @@ services:
             - ./code:/code
         ports:
             - "9100:9000"       
- #       networks:
- #           - LEMP
+        networks:
+            - LEMP
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -47,6 +43,9 @@ services:
             PMA_ARBITRARY: 1
         depends_on:
             - mariaDB
- #       networks:
- #           - LEMP
+        networks:
+            - LEMP
+
+networks:
+  LEMP:
             
