@@ -35,7 +35,7 @@ services:
         volumes:
             - ./code:/code
         ports:
-            - "9000:9000"       
+            - "9100:9000"       
  #       networks:
  #           - LEMP
 
