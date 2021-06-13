@@ -48,6 +48,10 @@ services:
             - mariaDB
         networks:
             - LEMP
+            
+networks:
+  LEMP:
+    external: true            
     
 
 
